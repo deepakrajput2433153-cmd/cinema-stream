@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 22% 7%;
+    --foreground: 0 0% 95%;
+
+    --card: 220 20% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 220 20% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    /* Prime Video Blue */
+    --primary: 199 100% 44%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 18% 16%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 220 14% 18%;
+    --muted-foreground: 220 10% 55%;
+
+    /* Prime Video cyan/teal accent */
+    --accent: 188 72% 55%;
+    --accent-foreground: 220 22% 7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 18% 18%;
+    --input: 220 18% 18%;
+    --ring: 199 100% 44%;
+
+    --radius: 0.375rem;
+
+    --sidebar-background: 220 22% 8%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 199 100% 44%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 18% 14%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 220 18% 16%;
+    --sidebar-ring: 199 100% 44%;
+
+    --gradient-hero: linear-gradient(to right, hsl(220 22% 7% / 0.98), hsl(220 22% 7% / 0.55), transparent);
+    --gradient-card: linear-gradient(to top, hsl(220 22% 7% / 0.95), transparent);
+    --gradient-nav: linear-gradient(to bottom, hsl(220 22% 7% / 0.95), transparent);
+    --shadow-glow: 0 0 30px hsl(199 100% 44% / 0.4);
+    --shadow-prime: 0 4px 20px hsl(199 100% 44% / 0.25);
+
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground;
+  }
+}
+
+.font-display {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card hover glow effect */
+.card-hover-glow {
+  transition: all 0.3s ease;
+}
+.card-hover-glow:hover {
+  box-shadow: 0 0 0 2px hsl(199 100% 44% / 0.6), 0 8px 30px hsl(199 100% 44% / 0.2);
+  transform: scale(1.03);
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
